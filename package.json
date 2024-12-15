@@ -1,0 +1,25 @@
+{
+  "packageManager": "pnpm@9.15.0",
+  "name": "args-tokenizer",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    "types": "./dist/args-tokenizer.d.ts",
+    "import": "./dist/args-tokenizer.js"
+  },
+  "scripts": {
+    "build": "rm -rf dist && esbuild src/args-tokenizer.ts --outdir=dist --bundle --format=esm && tsc && rm dist/*.test.*",
+    "test": "vitest run"
+  },
+  "keywords": [],
+  "author": "Bogdan Chadkin <opensource@trysound.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
