@@ -9,6 +9,12 @@
 - Supports multiline input.
 - Ideal for parsing human-readable shell commands, especially `curl`-style commands.
 
+---
+
+<img src="https://raw.githubusercontent.com/webstudio-is/webstudio-design/refs/heads/main/brand/logo-icon-color.svg" alt="" width="28" height="21" />  Made at <b><a href="https://webstudio.is">Webstudio</a></b>, open source website builder.
+
+---
+
 ## Installation
 
 Install `args-tokenizer`:
