@@ -1,6 +1,6 @@
 # args-tokenizer
 
-`args-tokenizer` is a lightweight JavaScript library for parsing shell commands with arguments into an `argv` array. This makes it easy to work with command-line tools and libraries that expect an array format for arguments, such as [`tinyexec`](https://github.com/tinyexec).
+`args-tokenizer` is a lightweight JavaScript library for parsing shell commands with arguments into an `argv` array. This makes it easy to work with command-line tools and libraries that expect an array format for arguments, such as [`tinyexec`](https://github.com/tinylibs/tinyexec).
 
 ## Features
 
@@ -43,7 +43,7 @@ console.log(args); // ["curl", "-X", "POST", "https://my-url.com"]
 
 ### Example with `tinyexec`
 
-One common use case is passing more human-readable commands into the [`tinyexec`](https://github.com/tinyexec) library:
+One common use case is passing more human-readable commands into the [`tinyexec`](https://github.com/tinylibs/tinyexec) library:
 
 ```js
 import { tokenizeArgs } from "args-tokenizer";
