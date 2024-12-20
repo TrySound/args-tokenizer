@@ -66,6 +66,16 @@ test("json argument", () => {
   ]);
 });
 
+test("multiline input", () => {
+  expect(
+    tokenizeArgs(`
+      command \\
+        --flag=1 \\
+        "argument"
+    `),
+  ).toEqual(["command", "--flag=1", "argument"]);
+});
+
 test("multiline argument", () => {
   expect(
     tokenizeArgs(`command "query Posts {
