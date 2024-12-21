@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "description": "Tokenize a shell string into argv array",
   "type": "module",
+  "types": "./dist/args-tokenizer.d.ts",
   "exports": {
     ".": {
       "types": "./dist/args-tokenizer.d.ts",
