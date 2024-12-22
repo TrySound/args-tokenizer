@@ -20,6 +20,10 @@
     "build": "rm -rf dist && esbuild src/args-tokenizer.ts --outdir=dist --bundle --format=esm && tsc && rm dist/*.test.*",
     "test": "vitest run"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrySound/args-tokenizer.git"
+  },
   "keywords": [],
   "author": "Bogdan Chadkin <opensource@trysound.io>",
   "license": "MIT",
