@@ -1,7 +1,7 @@
 {
   "packageManager": "pnpm@9.15.0",
   "name": "args-tokenizer",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Tokenize a shell string into argv array",
   "type": "module",
   "types": "./dist/args-tokenizer.d.ts",
