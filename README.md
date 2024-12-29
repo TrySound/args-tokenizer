@@ -62,13 +62,29 @@ console.log(result.stdout);
 
 ## API
 
-### `tokenizeArgs(command: string): string[]`
+### `tokenizeArgs(command: string, options: Options): string[]`
 
 Parses a shell command string into an array of arguments. Properly handles:
 
 - Quoted strings (e.g., `'"./path/to/file"'`).
 - Escaped characters (e.g., `\"`).
 - Multiline commands (e.g., lines ending with `\\`).
+
+### Options
+
+- `loose`: If `true`, the tokenizer will not throw an error when closing quotes are missing. Default is `false`.
+
+#### Examples
+
+```js
+// Without loose option (default behavior)
+// This will throw an error due to the missing closing quote
+tokenizeArgs('command "arg1 arg2');
+
+// With loose option enabled
+const args = tokenizeArgs('command "arg1 arg2', { loose: true });
+// ['command', 'arg1 arg2']
+```
 
 ## License
 

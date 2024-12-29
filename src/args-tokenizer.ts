@@ -1,9 +1,16 @@
 const spaceRegex = /\s/;
 
+type Options = {
+  loose?: boolean;
+};
+
 /**
  * Tokenize a shell string into argv array
  */
-export const tokenizeArgs = (argsString: string): string[] => {
+export const tokenizeArgs = (
+  argsString: string,
+  options?: Options,
+): string[] => {
   const tokens = [];
   let currentToken = "";
   let openningQuote: undefined | string;
@@ -49,6 +56,12 @@ export const tokenizeArgs = (argsString: string): string[] => {
   }
   if (currentToken.length > 0) {
     tokens.push(currentToken);
+  }
+  if (options?.loose) {
+    return tokens;
+  }
+  if (openningQuote) {
+    throw Error("Unexpected end of string. Closing quote is missing.");
   }
   return tokens;
 };
