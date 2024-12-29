@@ -1,7 +1,7 @@
 const spaceRegex = /\s/;
 
 type Options = {
-  strict?: boolean;
+  loose?: boolean;
 };
 
 /**
@@ -57,7 +57,10 @@ export const tokenizeArgs = (
   if (currentToken.length > 0) {
     tokens.push(currentToken);
   }
-  if (options?.strict && openningQuote) {
+  if (options?.loose) {
+    return tokens;
+  }
+  if (openningQuote) {
     throw Error("Unexpected end of string. Closing quote is missing.");
   }
   return tokens;

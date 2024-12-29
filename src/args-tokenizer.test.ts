@@ -21,14 +21,17 @@ test("inconsistently quoted arguments", () => {
   expect(tokenizeArgs(`command "arg"um"en"t`)).toEqual(["command", "argument"]);
 });
 
-test("forgive incomplete quotes", () => {
-  expect(tokenizeArgs(`command "arg`)).toEqual(["command", "arg"]);
+test("detects incomplete quotes ", () => {
+  expect(() => {
+    tokenizeArgs(`command "arg1 "arg2" "arg3"`);
+  }).toThrow("Unexpected end of string. Closing quote is missing.");
 });
 
-test("detects incomplete quotes in strict mode", () => {
-  expect(() => {
-    tokenizeArgs(`command "arg`, { strict: true });
-  }).toThrow("Unexpected end of string. Closing quote is missing.");
+test("forgive incomplete quotes in loose mode", () => {
+  expect(tokenizeArgs(`command "arg1 "arg2" "arg3"`, { loose: true })).toEqual([
+    "command",
+    "arg1 arg2 arg3",
+  ]);
 });
 
 test("escape quotes and spaces with other quotes", () => {
@@ -47,7 +50,7 @@ test("escape quotes with backslashes", () => {
 });
 
 test("escape spaces with backslashes", () => {
-  expect(tokenizeArgs(`command space\\ "`)).toEqual(["command", "space "]);
+  expect(tokenizeArgs(`command space\\ `)).toEqual(["command", "space "]);
 });
 
 test("ignore escaped newlines outside of quotes", () => {
