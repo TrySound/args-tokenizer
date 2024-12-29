@@ -20,13 +20,6 @@
     "build": "rm -rf dist && esbuild src/args-tokenizer.ts --outdir=dist --bundle --format=esm && tsc && rm dist/*.test.*",
     "test": "vitest run"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TrySound/args-tokenizer.git"
-  },
-  "keywords": [],
-  "author": "Bogdan Chadkin <opensource@trysound.io>",
-  "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.10.2",
     "esbuild": "^0.24.0",
@@ -34,5 +27,21 @@
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrySound/args-tokenizer.git"
+  },
+  "keywords": [
+    "args",
+    "commands",
+    "shell",
+    "tokenizer",
+    "parser",
+    "tinyexec",
+    "child_process",
+    "spawn"
+  ],
+  "author": "Bogdan Chadkin <opensource@trysound.io>",
+  "license": "MIT"
 }
